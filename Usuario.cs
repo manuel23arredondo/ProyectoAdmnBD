@@ -16,5 +16,10 @@ namespace ProyectoAdmnBD
         {
             InitializeComponent();
         }
+
+        private void Usuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

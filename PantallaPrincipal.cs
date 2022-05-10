@@ -34,16 +34,18 @@ namespace ProyectoAdmnBD
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlCommand comando = new SqlCommand("SELECT * FROM EMPLEADOS", Con);
+          /*  SqlCommand comando = new SqlCommand("SELECT * FROM EMPLEADOS", Con);
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
             Empleados.DataSource = tabla;
+          */
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            /*
             bool flag = true;
             string t = txtEmpleado.Text.ToUpper();
             string[] cadena = t.Split(' ');
@@ -73,6 +75,7 @@ namespace ProyectoAdmnBD
                 adaptador.Fill(tabla);
                 Empleados.DataSource = tabla;
             }
+            */
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -82,16 +85,23 @@ namespace ProyectoAdmnBD
             entrar.Show();
         }
 
-        private void btnTipoPago_Click(object sender, EventArgs e)
-        {
-            Close();
-            AgregarTipoPago tipoPago = new AgregarTipoPago();
-            tipoPago.Show();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Close();
+            Usuario usuario = new Usuario();
+            usuario.Show();
+        }
+
+        private void btnProductoPanaderia_Click(object sender, EventArgs e)
+        {
+            Close();
+            ProductosPanaderia productos = new ProductosPanaderia();
+            productos.Show();
         }
     }
 }

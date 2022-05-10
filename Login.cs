@@ -4,7 +4,7 @@ namespace ProyectoAdmnBD
 {
     public partial class Login : Form
     {
-        SqlConnection Con = new SqlConnection("Data Source = LAPTOP-BVSMJ8SM\\SQLEXPRESS; Initial Catalog = BDProyecto; Integrated Security = True");
+        SqlConnection Con = new SqlConnection("Data Source = LAPTOP-QA5FF1LT\\SQLEXPRESS; Initial Catalog = Proyecto; Integrated Security = True");
         string[] array = new string[] {"SELECT", "DELETE",
             "CREATE", "ALTER", "DROP",
             "INSERT", "UPDATE", "FROM",

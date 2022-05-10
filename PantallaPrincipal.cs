@@ -5,7 +5,7 @@ namespace ProyectoAdmnBD
 {
     public partial class Form1 : Form
     {
-        SqlConnection Con = new SqlConnection("Data Source = LAPTOP-BVSMJ8SM\\SQLEXPRESS; Initial Catalog = BDProyecto; Integrated Security = True");
+        SqlConnection Con = new SqlConnection("Data Source = LAPTOP-QA5FF1LT\\SQLEXPRESS; Initial Catalog = BDProyecto; Integrated Security = True");
         string[] array = new string[] {"SELECT", "DELETE",
             "CREATE", "ALTER", "DROP",
             "INSERT", "UPDATE", "FROM",
@@ -102,6 +102,13 @@ namespace ProyectoAdmnBD
             Close();
             ProductosPanaderia productos = new ProductosPanaderia();
             productos.Show();
+            
+        }
+        private void btnReportePan_Click(object sender, EventArgs e)
+        {
+            Close();
+            ReportePan reportePan = new ReportePan();
+            reportePan.Show();
         }
     }
 }

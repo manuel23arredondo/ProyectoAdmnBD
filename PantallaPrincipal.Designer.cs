@@ -35,7 +35,7 @@
             this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnProductoPanaderia = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnReportePan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -109,21 +109,22 @@
             this.btnProductoPanaderia.Text = "Productos Panaderia";
             this.btnProductoPanaderia.Click += new System.EventHandler(this.btnProductoPanaderia_Click);
             // 
-            // btnReportes
+            // btnReportePan
             // 
-            this.btnReportes.Location = new System.Drawing.Point(417, 106);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(162, 39);
-            this.btnReportes.TabIndex = 7;
-            this.btnReportes.Text = "Reportes";
+            this.btnReportePan.Location = new System.Drawing.Point(417, 106);
+            this.btnReportePan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReportePan.Name = "btnReportePan";
+            this.btnReportePan.Size = new System.Drawing.Size(173, 39);
+            this.btnReportePan.TabIndex = 7;
+            this.btnReportePan.Text = "Reporte Panaderia";
+            this.btnReportePan.Click += new System.EventHandler(this.btnReportePan_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 321);
-            this.Controls.Add(this.btnReportes);
+            this.Controls.Add(this.btnReportePan);
             this.Controls.Add(this.btnProductoPanaderia);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.button4);
@@ -149,6 +150,6 @@
         private TextBox txtEmpleado;
         private Button btnUsuarios;
         private Button btnProductoPanaderia;
-        private Button btnReportes;
+        private Button btnReportePan;
     }
 }

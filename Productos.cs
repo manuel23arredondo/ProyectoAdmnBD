@@ -63,7 +63,7 @@ namespace ProyectoAdmnBD
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
-                command.Parameters.AddWithValue("@id", Id);
+                command.Parameters.AddWithValue("@id",Id);
                 try
                 {
                     Con.Open();

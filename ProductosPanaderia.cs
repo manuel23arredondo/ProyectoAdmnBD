@@ -39,7 +39,7 @@ namespace ProyectoAdmnBD
             int? id = GetId();
             if (id != null)
             {
-                AgregarPan agregarPan = new AgregarPan();
+                AgregarPan agregarPan = new AgregarPan(id);
                 agregarPan.ShowDialog();
                 Refresh();
             }

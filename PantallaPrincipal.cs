@@ -107,8 +107,13 @@ namespace ProyectoAdmnBD
         private void btnReportePan_Click(object sender, EventArgs e)
         {
             Close();
-            ReportePan reportePan = new ReportePan();
-            reportePan.Show();
+            ReportePan reporte = new ReportePan();
+            reporte.Show();
+        }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

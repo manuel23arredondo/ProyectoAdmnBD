@@ -36,6 +36,7 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnProductoPanaderia = new System.Windows.Forms.Button();
             this.btnReportePan = new System.Windows.Forms.Button();
+            this.btnProveedor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -119,11 +120,22 @@
             this.btnReportePan.Text = "Reporte Panaderia";
             this.btnReportePan.Click += new System.EventHandler(this.btnReportePan_Click);
             // 
+            // btnProveedor
+            // 
+            this.btnProveedor.Location = new System.Drawing.Point(682, 176);
+            this.btnProveedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(173, 39);
+            this.btnProveedor.TabIndex = 8;
+            this.btnProveedor.Text = "Proveedores";
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 321);
+            this.Controls.Add(this.btnProveedor);
             this.Controls.Add(this.btnReportePan);
             this.Controls.Add(this.btnProductoPanaderia);
             this.Controls.Add(this.btnUsuarios);
@@ -151,5 +163,6 @@
         private Button btnUsuarios;
         private Button btnProductoPanaderia;
         private Button btnReportePan;
+        private Button btnProveedor;
     }
 }

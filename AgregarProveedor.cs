@@ -20,10 +20,10 @@ namespace ProyectoAdmnBD
             if (this.Id != null)
                 LoadData();
         }
-        private void LoadData()
+       private void LoadData()
         {
             Proveedor proveedor = new Proveedor();
-            Proveedores proveedores = proveedor.Get((int)Id);
+            Proveed proveedores = proveedor.Get((int)Id);
             txtAgregarProvee.Text = proveedores.Nombre;
             txtCelProvee.Text = proveedores.Celular;
             txtCalleProvee.Text = proveedores.Calle;
@@ -49,5 +49,6 @@ namespace ProyectoAdmnBD
                 MessageBox.Show("Hay un error");
             }
         }
+
     }
 }

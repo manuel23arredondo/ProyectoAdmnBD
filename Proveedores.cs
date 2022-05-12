@@ -84,5 +84,10 @@ namespace ProyectoAdmnBD
         {
             Refresh();
         }
+
+        private void Proveedores_Load(object sender, EventArgs e)
+        {
+            Refresh();
+        }
     }
 }

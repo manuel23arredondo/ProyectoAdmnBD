@@ -111,6 +111,7 @@
             this.Controls.Add(this.btnEditarProvee);
             this.Name = "Proveedores";
             this.Text = "Proveedores";
+            this.Load += new System.EventHandler(this.Proveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataProvee)).EndInit();
             this.ResumeLayout(false);
 

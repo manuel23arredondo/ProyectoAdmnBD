@@ -113,7 +113,23 @@ namespace ProyectoAdmnBD
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
-            
+            Close();
+            Proveedores proveedor = new Proveedores();
+            proveedor.Show();
+        }
+
+        private void btnIngredientes_Click(object sender, EventArgs e)
+        {
+            Close();
+            Ingredientes ingredientes = new Ingredientes();
+            ingredientes.Show();
+        }
+
+        private void btnCompraIngredientes_Click(object sender, EventArgs e)
+        {
+            Close();
+            CompraIngredientes compra = new CompraIngredientes();
+            compra.Show();
         }
     }
 }

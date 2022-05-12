@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-
 
 namespace ProyectoAdmnBD
 {
-    public class Proveedor
+    public class Compra
     {
         private string connection = "Data Source = LAPTOP-QA5FF1LT\\SQLEXPRESS; Initial Catalog = Proyecto; Integrated Security = True";
         public bool connect()
@@ -24,10 +23,11 @@ namespace ProyectoAdmnBD
             }
             return true;
         }
-        public List<Proveed> Get()
+
+        public List<Compras> Get()
         {
-            List<Proveed> provee = new List<Proveed>();
-            string query = "Select * from Proveedoress";
+            List<Compras> compra = new List<Compras>();
+            string query = "Select * from Compras";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -37,14 +37,12 @@ namespace ProyectoAdmnBD
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        Proveed aProvee = new Proveed();
-                        aProvee.Id = reader.GetInt32(0);
-                        aProvee.Nombre = reader.GetString(1);
-                        aProvee.Celular = reader.GetString(2);
-                        aProvee.Calle = reader.GetString(3);
-                        aProvee.Numero = reader.GetString(4);
-                        aProvee.Colonia = reader.GetString(5);
-                        provee.Add(aProvee);
+                        Compras aCompras = new Compras();
+                        aCompras.Id = reader.GetInt32(0);
+                        aCompras.Id_Ingrediente = reader.GetInt32(1);
+                        aCompras.Id_Proveedor = reader.GetInt32(2);
+                        aCompras.Costo = reader.GetDecimal(3);
+                        compra.Add(aCompras);
                     }
 
                     reader.Close();
@@ -57,11 +55,12 @@ namespace ProyectoAdmnBD
                 }
             }
 
-            return provee;
+            return compra;
         }
-        public Proveed Get(int Id)
+
+        public Compras Get(int Id)
         {
-            string query = "Select * from Proveedoress WHERE Id=@Id";
+            string query = "Select * from Compras WHERE Id=@Id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -72,16 +71,14 @@ namespace ProyectoAdmnBD
                     SqlDataReader reader = command.ExecuteReader();
                     reader.Read();
 
-                    Proveed aProvee = new Proveed();
-                    aProvee.Id = reader.GetInt32(0);
-                    aProvee.Nombre = reader.GetString(1);
-                    aProvee.Celular = reader.GetString(2);
-                    aProvee.Calle = reader.GetString(3);
-                    aProvee.Numero = reader.GetString(4);
-                    aProvee.Colonia = reader.GetString(5);
+                    Compras aCompras = new Compras();
+                    aCompras.Id = reader.GetInt32(0);
+                    aCompras.Id_Ingrediente = reader.GetInt32(1);
+                    aCompras.Id_Proveedor = reader.GetInt32(2);
+                    aCompras.Costo = reader.GetDecimal(3);
                     reader.Close();
                     Con.Close();
-                    return aProvee;
+                    return aCompras;
                 }
                 catch (Exception ex)
                 {
@@ -90,17 +87,16 @@ namespace ProyectoAdmnBD
                 }
             }
         }
-        public void add(string nombre, string celular, string calle, string numero, string colonia)
+
+        public void add(int id_Ingrediente, int id_Proveedor, decimal costo)
         {
-            string query = "Insert into Proveedoress (nombre, celular, calle, numero, colonia) VALUES (@nombre, @celular, @calle, @numero, @colonia)";
+            string query = "Insert into Compras (id_Ingrediente, id_Proveedor, Costo) VALUES (@id_Ingrediente, @id_Proveedor, @Costo)";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
-                command.Parameters.AddWithValue("@nombre", nombre);
-                command.Parameters.AddWithValue("@celular", celular);
-                command.Parameters.AddWithValue("@calle", calle);
-                command.Parameters.AddWithValue("@numero", numero);
-                command.Parameters.AddWithValue("@colonia", colonia);
+                command.Parameters.AddWithValue("@id_Ingrediente", id_Ingrediente);
+                command.Parameters.AddWithValue("@id_Proveedor", id_Proveedor);
+                command.Parameters.AddWithValue("@Costo", costo);
 
                 try
                 {
@@ -116,17 +112,15 @@ namespace ProyectoAdmnBD
             }
         }
 
-        public void update(string nombre, string celular, string calle, string numero, string colonia, int id)
+        public void update(int id_Ingrediente, int id_Proveedor, decimal costo, int id)
         {
-            string query = "UPDATE Proveedores SET nombre = @nombre, celular = @celular, calle=@calle, numero=@numero, colonia=@colonia WHERE id=@id";
+            string query = "UPDATE Compras SET id_Ingrediente = @id_Ingrediente, id_Proveedor=@id_Proveedor, Costo=@Costo where id=@id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
-                command.Parameters.AddWithValue("@nombre", nombre);
-                command.Parameters.AddWithValue("@celular", celular);
-                command.Parameters.AddWithValue("@calle", calle);
-                command.Parameters.AddWithValue("@numero", numero);
-                command.Parameters.AddWithValue("@colonia", colonia);
+                command.Parameters.AddWithValue("@id_Ingrediente", id_Ingrediente);
+                command.Parameters.AddWithValue("@id_Proveedor", id_Proveedor);
+                command.Parameters.AddWithValue("@Costo", costo);
                 command.Parameters.AddWithValue("@id", id);
 
                 try
@@ -141,11 +135,10 @@ namespace ProyectoAdmnBD
 
                 }
             }
-
         }
         public void delete(int id)
         {
-            string query = "DELETE FROM Proveedoress WHERE id=@id";
+            string query = "DELETE FROM Compras WHERE id=@id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -166,15 +159,12 @@ namespace ProyectoAdmnBD
         }
 
     }
-    public class Proveed
+
+    public class Compras
     {
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Celular { get; set; }
-        public string Calle { get; set; }
-        public string Numero { get; set; }
-        public string Colonia { get; set; }
-
-
+        public int Id_Ingrediente { get; set; }
+        public int Id_Proveedor { get; set; }
+        public decimal Costo { get; set; }
     }
 }

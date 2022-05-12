@@ -28,39 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnRegresarReportPan = new System.Windows.Forms.Button();
             this.dataPan = new System.Windows.Forms.DataGridView();
-            this.btnRegresarReportePan = new System.Windows.Forms.Button();
+            this.btnMostrarReportePan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataPan)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnRegresarReportPan
+            // 
+            this.btnRegresarReportPan.Location = new System.Drawing.Point(12, 12);
+            this.btnRegresarReportPan.Name = "btnRegresarReportPan";
+            this.btnRegresarReportPan.Size = new System.Drawing.Size(112, 34);
+            this.btnRegresarReportPan.TabIndex = 0;
+            this.btnRegresarReportPan.Text = "Regresar";
+            this.btnRegresarReportPan.UseVisualStyleBackColor = true;
+            this.btnRegresarReportPan.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dataPan
             // 
-            this.dataPan.AllowUserToOrderColumns = true;
             this.dataPan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataPan.Location = new System.Drawing.Point(153, 121);
+            this.dataPan.Location = new System.Drawing.Point(36, 64);
             this.dataPan.Name = "dataPan";
+            this.dataPan.ReadOnly = true;
             this.dataPan.RowHeadersWidth = 62;
             this.dataPan.RowTemplate.Height = 33;
-            this.dataPan.Size = new System.Drawing.Size(584, 281);
-            this.dataPan.TabIndex = 0;
+            this.dataPan.Size = new System.Drawing.Size(616, 287);
+            this.dataPan.TabIndex = 1;
+            this.dataPan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPan_CellContentClick);
             // 
-            // btnRegresarReportePan
+            // btnMostrarReportePan
             // 
-            this.btnRegresarReportePan.Location = new System.Drawing.Point(12, 12);
-            this.btnRegresarReportePan.Name = "btnRegresarReportePan";
-            this.btnRegresarReportePan.Size = new System.Drawing.Size(112, 34);
-            this.btnRegresarReportePan.TabIndex = 1;
-            this.btnRegresarReportePan.Text = "Regresar";
-            this.btnRegresarReportePan.UseVisualStyleBackColor = true;
-            this.btnRegresarReportePan.Click += new System.EventHandler(this.btnRegresarReportePan_Click);
+            this.btnMostrarReportePan.Location = new System.Drawing.Point(151, 12);
+            this.btnMostrarReportePan.Name = "btnMostrarReportePan";
+            this.btnMostrarReportePan.Size = new System.Drawing.Size(160, 34);
+            this.btnMostrarReportePan.TabIndex = 2;
+            this.btnMostrarReportePan.Text = "Generar Reporte";
+            this.btnMostrarReportePan.UseVisualStyleBackColor = true;
+            this.btnMostrarReportePan.Click += new System.EventHandler(this.btnMostrarReportePan_Click);
             // 
             // ReportePan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnRegresarReportePan);
+            this.ClientSize = new System.Drawing.Size(691, 373);
+            this.Controls.Add(this.btnMostrarReportePan);
             this.Controls.Add(this.dataPan);
+            this.Controls.Add(this.btnRegresarReportPan);
             this.Name = "ReportePan";
             this.Text = "ReportePan";
             this.Load += new System.EventHandler(this.ReportePan_Load);
@@ -71,7 +84,8 @@
 
         #endregion
 
+        private Button btnRegresarReportPan;
         private DataGridView dataPan;
-        private Button btnRegresarReportePan;
+        private Button btnMostrarReportePan;
     }
 }

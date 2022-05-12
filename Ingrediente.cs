@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-
 
 namespace ProyectoAdmnBD
 {
-    public class Proveedor
+    public class Ingrediente
     {
         private string connection = "Data Source = LAPTOP-QA5FF1LT\\SQLEXPRESS; Initial Catalog = Proyecto; Integrated Security = True";
         public bool connect()
@@ -24,10 +23,10 @@ namespace ProyectoAdmnBD
             }
             return true;
         }
-        public List<Proveed> Get()
+        public List<Ingred> Get()
         {
-            List<Proveed> provee = new List<Proveed>();
-            string query = "Select * from Proveedoress";
+            List<Ingred> ingreds = new List<Ingred>();
+            string query = "Select * from Ingredientes";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -37,14 +36,10 @@ namespace ProyectoAdmnBD
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        Proveed aProvee = new Proveed();
-                        aProvee.Id = reader.GetInt32(0);
-                        aProvee.Nombre = reader.GetString(1);
-                        aProvee.Celular = reader.GetString(2);
-                        aProvee.Calle = reader.GetString(3);
-                        aProvee.Numero = reader.GetString(4);
-                        aProvee.Colonia = reader.GetString(5);
-                        provee.Add(aProvee);
+                        Ingred aIngreds = new Ingred();
+                        aIngreds.Id = reader.GetInt32(0);
+                        aIngreds.Nombre = reader.GetString(1);
+                        ingreds.Add(aIngreds);
                     }
 
                     reader.Close();
@@ -57,11 +52,11 @@ namespace ProyectoAdmnBD
                 }
             }
 
-            return provee;
+            return ingreds;
         }
-        public Proveed Get(int Id)
+        public Ingred Get(int Id)
         {
-            string query = "Select * from Proveedoress WHERE Id=@Id";
+            string query = "Select * from Ingredientes WHERE Id=@Id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -72,16 +67,12 @@ namespace ProyectoAdmnBD
                     SqlDataReader reader = command.ExecuteReader();
                     reader.Read();
 
-                    Proveed aProvee = new Proveed();
-                    aProvee.Id = reader.GetInt32(0);
-                    aProvee.Nombre = reader.GetString(1);
-                    aProvee.Celular = reader.GetString(2);
-                    aProvee.Calle = reader.GetString(3);
-                    aProvee.Numero = reader.GetString(4);
-                    aProvee.Colonia = reader.GetString(5);
+                    Ingred aIngreds = new Ingred();
+                    aIngreds.Id = reader.GetInt32(0);
+                    aIngreds.Nombre = reader.GetString(1);
                     reader.Close();
                     Con.Close();
-                    return aProvee;
+                    return aIngreds;
                 }
                 catch (Exception ex)
                 {
@@ -90,17 +81,13 @@ namespace ProyectoAdmnBD
                 }
             }
         }
-        public void add(string nombre, string celular, string calle, string numero, string colonia)
+        public void add(string nombre)
         {
-            string query = "Insert into Proveedoress (nombre, celular, calle, numero, colonia) VALUES (@nombre, @celular, @calle, @numero, @colonia)";
+            string query = "Insert into Ingredientes (nombre) VALUES (@nombre)";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
                 command.Parameters.AddWithValue("@nombre", nombre);
-                command.Parameters.AddWithValue("@celular", celular);
-                command.Parameters.AddWithValue("@calle", calle);
-                command.Parameters.AddWithValue("@numero", numero);
-                command.Parameters.AddWithValue("@colonia", colonia);
 
                 try
                 {
@@ -116,17 +103,13 @@ namespace ProyectoAdmnBD
             }
         }
 
-        public void update(string nombre, string celular, string calle, string numero, string colonia, int id)
+        public void update(string nombre, int id)
         {
-            string query = "UPDATE Proveedores SET nombre = @nombre, celular = @celular, calle=@calle, numero=@numero, colonia=@colonia WHERE id=@id";
+            string query = "UPDATE Ingredientes SET nombre = @nombre WHERE id=@id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
                 command.Parameters.AddWithValue("@nombre", nombre);
-                command.Parameters.AddWithValue("@celular", celular);
-                command.Parameters.AddWithValue("@calle", calle);
-                command.Parameters.AddWithValue("@numero", numero);
-                command.Parameters.AddWithValue("@colonia", colonia);
                 command.Parameters.AddWithValue("@id", id);
 
                 try
@@ -145,7 +128,7 @@ namespace ProyectoAdmnBD
         }
         public void delete(int id)
         {
-            string query = "DELETE FROM Proveedoress WHERE id=@id";
+            string query = "DELETE FROM Ingredientes WHERE id=@id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -166,15 +149,10 @@ namespace ProyectoAdmnBD
         }
 
     }
-    public class Proveed
+    public class Ingred
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Celular { get; set; }
-        public string Calle { get; set; }
-        public string Numero { get; set; }
-        public string Colonia { get; set; }
-
 
     }
 }

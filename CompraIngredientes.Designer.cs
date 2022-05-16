@@ -40,6 +40,7 @@
             // btnRegresarIngre
             // 
             this.btnRegresarIngre.Location = new System.Drawing.Point(79, 64);
+            this.btnRegresarIngre.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresarIngre.Name = "btnRegresarIngre";
             this.btnRegresarIngre.Size = new System.Drawing.Size(112, 34);
             this.btnRegresarIngre.TabIndex = 31;
@@ -50,27 +51,30 @@
             // dataCompraIngre
             // 
             this.dataCompraIngre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataCompraIngre.Location = new System.Drawing.Point(117, 121);
+            this.dataCompraIngre.Location = new System.Drawing.Point(50, 135);
+            this.dataCompraIngre.Margin = new System.Windows.Forms.Padding(2);
             this.dataCompraIngre.Name = "dataCompraIngre";
             this.dataCompraIngre.ReadOnly = true;
             this.dataCompraIngre.RowHeadersWidth = 62;
             this.dataCompraIngre.RowTemplate.Height = 33;
-            this.dataCompraIngre.Size = new System.Drawing.Size(562, 273);
+            this.dataCompraIngre.Size = new System.Drawing.Size(708, 272);
             this.dataCompraIngre.TabIndex = 30;
             // 
             // btnActualizarIngre
             // 
             this.btnActualizarIngre.Location = new System.Drawing.Point(609, 64);
+            this.btnActualizarIngre.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizarIngre.Name = "btnActualizarIngre";
-            this.btnActualizarIngre.Size = new System.Drawing.Size(112, 34);
+            this.btnActualizarIngre.Size = new System.Drawing.Size(160, 34);
             this.btnActualizarIngre.TabIndex = 29;
-            this.btnActualizarIngre.Text = "Actualizar";
+            this.btnActualizarIngre.Text = "Generar Reporte";
             this.btnActualizarIngre.UseVisualStyleBackColor = true;
             this.btnActualizarIngre.Click += new System.EventHandler(this.btnActualizarIngre_Click);
             // 
             // btnEliminarIngre
             // 
             this.btnEliminarIngre.Location = new System.Drawing.Point(468, 64);
+            this.btnEliminarIngre.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarIngre.Name = "btnEliminarIngre";
             this.btnEliminarIngre.Size = new System.Drawing.Size(112, 34);
             this.btnEliminarIngre.TabIndex = 28;
@@ -81,6 +85,7 @@
             // btnAgregarIngre
             // 
             this.btnAgregarIngre.Location = new System.Drawing.Point(220, 64);
+            this.btnAgregarIngre.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarIngre.Name = "btnAgregarIngre";
             this.btnAgregarIngre.Size = new System.Drawing.Size(88, 34);
             this.btnAgregarIngre.TabIndex = 27;
@@ -91,6 +96,7 @@
             // btnEditarIngre
             // 
             this.btnEditarIngre.Location = new System.Drawing.Point(336, 64);
+            this.btnEditarIngre.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarIngre.Name = "btnEditarIngre";
             this.btnEditarIngre.Size = new System.Drawing.Size(112, 34);
             this.btnEditarIngre.TabIndex = 26;
@@ -109,6 +115,7 @@
             this.Controls.Add(this.btnEliminarIngre);
             this.Controls.Add(this.btnAgregarIngre);
             this.Controls.Add(this.btnEditarIngre);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CompraIngredientes";
             this.Text = "CompraIngredientes";
             this.Load += new System.EventHandler(this.CompraIngredientes_Load);

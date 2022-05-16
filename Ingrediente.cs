@@ -26,7 +26,7 @@ namespace ProyectoAdmnBD
         public List<Ingred> Get()
         {
             List<Ingred> ingreds = new List<Ingred>();
-            string query = "Select * from Ingredientes";
+            string query = "Select * from Ingredientes2";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -56,7 +56,7 @@ namespace ProyectoAdmnBD
         }
         public Ingred Get(int Id)
         {
-            string query = "Select * from Ingredientes WHERE Id=@Id";
+            string query = "Select * from Ingredientes2 WHERE Id=@Id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -83,7 +83,7 @@ namespace ProyectoAdmnBD
         }
         public void add(string nombre)
         {
-            string query = "Insert into Ingredientes (nombre) VALUES (@nombre)";
+            string query = "Insert into Ingredientes2 (nombre) VALUES (@nombre)";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -105,7 +105,7 @@ namespace ProyectoAdmnBD
 
         public void update(string nombre, int id)
         {
-            string query = "UPDATE Ingredientes SET nombre = @nombre WHERE id=@id";
+            string query = "UPDATE Ingredientes2 SET nombre = @nombre WHERE id=@id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);
@@ -128,7 +128,7 @@ namespace ProyectoAdmnBD
         }
         public void delete(int id)
         {
-            string query = "DELETE FROM Ingredientes WHERE id=@id";
+            string query = "DELETE FROM Ingredientes2 WHERE id=@id";
             using (SqlConnection Con = new SqlConnection(connection))
             {
                 SqlCommand command = new SqlCommand(query, Con);

@@ -39,9 +39,10 @@
             // 
             // btnRegresarProvee
             // 
-            this.btnRegresarProvee.Location = new System.Drawing.Point(75, 20);
+            this.btnRegresarProvee.Location = new System.Drawing.Point(180, 24);
+            this.btnRegresarProvee.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresarProvee.Name = "btnRegresarProvee";
-            this.btnRegresarProvee.Size = new System.Drawing.Size(112, 34);
+            this.btnRegresarProvee.Size = new System.Drawing.Size(90, 27);
             this.btnRegresarProvee.TabIndex = 19;
             this.btnRegresarProvee.Text = "Regresar";
             this.btnRegresarProvee.UseVisualStyleBackColor = true;
@@ -50,19 +51,21 @@
             // dataProvee
             // 
             this.dataProvee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataProvee.Location = new System.Drawing.Point(115, 70);
+            this.dataProvee.Location = new System.Drawing.Point(11, 76);
+            this.dataProvee.Margin = new System.Windows.Forms.Padding(2);
             this.dataProvee.Name = "dataProvee";
             this.dataProvee.ReadOnly = true;
             this.dataProvee.RowHeadersWidth = 62;
             this.dataProvee.RowTemplate.Height = 33;
-            this.dataProvee.Size = new System.Drawing.Size(562, 273);
+            this.dataProvee.Size = new System.Drawing.Size(801, 310);
             this.dataProvee.TabIndex = 18;
             // 
             // btnActualizarProvee
             // 
-            this.btnActualizarProvee.Location = new System.Drawing.Point(605, 20);
+            this.btnActualizarProvee.Location = new System.Drawing.Point(604, 24);
+            this.btnActualizarProvee.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizarProvee.Name = "btnActualizarProvee";
-            this.btnActualizarProvee.Size = new System.Drawing.Size(112, 34);
+            this.btnActualizarProvee.Size = new System.Drawing.Size(90, 27);
             this.btnActualizarProvee.TabIndex = 17;
             this.btnActualizarProvee.Text = "Actualizar";
             this.btnActualizarProvee.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             // btnEliminarProvee
             // 
-            this.btnEliminarProvee.Location = new System.Drawing.Point(464, 20);
+            this.btnEliminarProvee.Location = new System.Drawing.Point(491, 24);
+            this.btnEliminarProvee.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarProvee.Name = "btnEliminarProvee";
-            this.btnEliminarProvee.Size = new System.Drawing.Size(112, 34);
+            this.btnEliminarProvee.Size = new System.Drawing.Size(90, 27);
             this.btnEliminarProvee.TabIndex = 16;
             this.btnEliminarProvee.Text = "Eliminar";
             this.btnEliminarProvee.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // btnAgregarProvee
             // 
-            this.btnAgregarProvee.Location = new System.Drawing.Point(216, 20);
+            this.btnAgregarProvee.Location = new System.Drawing.Point(293, 24);
+            this.btnAgregarProvee.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarProvee.Name = "btnAgregarProvee";
-            this.btnAgregarProvee.Size = new System.Drawing.Size(88, 34);
+            this.btnAgregarProvee.Size = new System.Drawing.Size(70, 27);
             this.btnAgregarProvee.TabIndex = 15;
             this.btnAgregarProvee.Text = "Agregar";
             this.btnAgregarProvee.UseVisualStyleBackColor = true;
@@ -90,9 +95,10 @@
             // 
             // btnEditarProvee
             // 
-            this.btnEditarProvee.Location = new System.Drawing.Point(332, 20);
+            this.btnEditarProvee.Location = new System.Drawing.Point(386, 24);
+            this.btnEditarProvee.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarProvee.Name = "btnEditarProvee";
-            this.btnEditarProvee.Size = new System.Drawing.Size(112, 34);
+            this.btnEditarProvee.Size = new System.Drawing.Size(90, 27);
             this.btnEditarProvee.TabIndex = 14;
             this.btnEditarProvee.Text = "Editar";
             this.btnEditarProvee.UseVisualStyleBackColor = true;
@@ -100,15 +106,16 @@
             // 
             // Proveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(828, 397);
             this.Controls.Add(this.btnRegresarProvee);
             this.Controls.Add(this.dataProvee);
             this.Controls.Add(this.btnActualizarProvee);
             this.Controls.Add(this.btnEliminarProvee);
             this.Controls.Add(this.btnAgregarProvee);
             this.Controls.Add(this.btnEditarProvee);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Proveedores";
             this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.Proveedores_Load);

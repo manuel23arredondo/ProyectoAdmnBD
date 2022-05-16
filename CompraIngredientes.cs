@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ProyectoAdmnBD
 {
     public partial class CompraIngredientes : Form
     {
+        SqlConnection Con = new SqlConnection("Data Source = LAPTOP-QA5FF1LT\\SQLEXPRESS; Initial Catalog = Proyecto; Integrated Security = True");
         public CompraIngredientes()
         {
             InitializeComponent();
@@ -75,8 +77,13 @@ namespace ProyectoAdmnBD
 
         private void btnActualizarIngre_Click(object sender, EventArgs e)
         {
-            Refresh();
-
+            // Refresh();
+            string query = "SELECT C.id, P.nombre 'Proveedor', I.Nombre 'Ingrediente', C.Costo FROM Compras C, Proveedoress2 P, Ingredientes2 I where C.id_ingrediente = I.id AND C.id_Proveedor = P.id";
+            SqlCommand cmd = new SqlCommand(query, Con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            data.Fill(dt);
+            dataCompraIngre.DataSource = dt;
         }
 
         private void CompraIngredientes_Load(object sender, EventArgs e)
@@ -84,9 +91,9 @@ namespace ProyectoAdmnBD
             Refresh();
         }
         private void Refresh()
-        {
+        {/*
             Compra aUser = new Compra();
-            dataCompraIngre.DataSource = aUser.Get();
+            dataCompraIngre.DataSource = aUser.Get();*/
         }
     }
 }

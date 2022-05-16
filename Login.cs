@@ -51,7 +51,37 @@ namespace ProyectoAdmnBD
                     }
                 }
             }
-
+            
+            /////////////////////////////////////////////////////////////////////////
+            ///
+            /*
+            if(txtUsername.Text != "" & txtPassword.Text != "")
+            {
+                string querytext = "SELECT Count (*) from Usuarios WHERE usuername=@username AND password=@password COLLATE SQL_Latin1_general_CP1_CS_AS";
+                SqlConnection cn = new SqlConnection("Data Source = LAPTOP-QA5FF1LT\\SQLEXPRESS; Initial Catalog = Proyecto; Integrated Security = True");
+                SqlCommand command = new SqlCommand(querytext, cn);
+                {
+                    cn.Open();
+                    command.Parameters.AddWithValue("@username",txtUsername.Text);
+                    command.Parameters.AddWithValue("@password", txtPassword);
+                    int result = Convert.ToInt32(command.ExecuteScalar());
+                    if (result > 0)
+                    {
+                        Close();
+                        Form1 principal = new Form1();
+                        principal.Show();
+                    }
+                    else
+                    {
+                        Con.Close();
+                        MessageBox.Show("Usuario/Contraseña no válidos");
+                        txtUsername.Clear();
+                        txtPassword.Clear();
+                    }
+                }
+            }
+            */
+            ///////////////////////////////////////////////////////////
             if (flag)
             {
                 Con.Open();
